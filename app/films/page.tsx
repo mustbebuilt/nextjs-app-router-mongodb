@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "../page.module.css";
 import { connectDB } from '../../lib/db';
 import { Film } from '../../models/Film';
+import Link from "next/link";
 
 export default async function Films() {
 
@@ -15,14 +16,10 @@ export default async function Films() {
             <h1>Films</h1>
             <ul>
                 {films.map((film) => (
-                    <li key={film._id}>
+                    <div key={film._id}>
                         <h2>{film.filmTitle}</h2>
-                        <p>Certificate: {film.filmCertificate}</p>
-                        <p>Description: {film.filmDescription}</p>
-                        <p>Price: {film.filmPrice}</p>
-                        <p>Stars: {film.stars}</p>
-                        <p>Release Date: {film.releaseDate.toDateString()}</p>
-                    </li>
+                        <p><Link href={`/films/${film._id}`}>More Details</Link></p>
+                    </div>
                 ))}
             </ul>
         </main>

@@ -13,7 +13,7 @@ export const getPosts = async () => {
     }
 }
 
-export const getPost = async (slug) => {
+export const getPost = async (slug: string) => {
     try {
         connectDB();
         const post = await Post.findOne({ slug });
@@ -35,7 +35,7 @@ export const getUsers = async () => {
     }
 }
 
-export const getUser = async (id) => {
+export const getUser = async (id: string) => {
     try {
         connectDB();
         const user = await User.findById(id);

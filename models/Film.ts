@@ -1,10 +1,10 @@
 import mongoose, { Schema, model } from 'mongoose';
 
 const FilmSchema = new Schema({
-    _id: {
-        type: String,
-        required: true,
-    },
+    // _id: {
+    //     type: String,
+    //     required: true,
+    // },
     filmTitle: {
         type: String,
         required: true,
